@@ -12,8 +12,10 @@ export default function SimpleClock() {
   });
 
   const handleClock = () => {
-    const local = DateTime.local();
-
+    const local = DateTime.local().setLocale("");
+    // const { day, hour, minute, second } = local.c;
+    local.c.day = local.toFormat("ccc");
+    // setTimes({ hour, minute, second, day: local.toFormat("ccccc") });
     setTimes({ ...local.c });
   };
   useEffect(() => {
@@ -25,14 +27,17 @@ export default function SimpleClock() {
         <p class="clock-day clock-timer">{times.day}</p>
         <p class="clock-label">Day</p>
       </div>
+      <div className="divider"></div>
       <div class="clock-col">
         <p class="clock-hours clock-timer">{times.hour}</p>
         <p class="clock-label">Hours</p>
       </div>
+      <div className="divider"></div>
       <div class="clock-col">
         <p class="clock-minutes clock-timer">{times.minute}</p>
         <p class="clock-label">Minutes</p>
       </div>
+      <div className="divider"></div>
       <div class="clock-col">
         <p class="clock-seconds clock-timer">{times.second}</p>
         <p class="clock-label">Seconds</p>
