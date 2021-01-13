@@ -1,7 +1,7 @@
 import React from "react";
 // import "./styles.css";
 
-function SimpleClock() {
+function DemoClock() {
   return (
     <article class="clock">
       <div class="hours-container">
@@ -17,4 +17,4 @@ function SimpleClock() {
   );
 }
 
-export default SimpleClock;
+export default DemoClock;
